@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript-Spielereien</title>
+
+    <style>
+        /* Hier kommt das css rein */
+        #flaeche{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+        }
+        button{
+            height: 100px;
+            width: 100px;
+            background-color: gainsboro;
+            color: darkgreen;
+        }
+
+    </style>
+
+    <script>
+        // Hier kommt das javascript rein
+        window.addEventListener('load', initial);
+        function initial() {
+            var button = document.getElementsByTagName('button');
+            button[0].addEventListener('click', farbeaendern);
+            function farbeaendern(){
+                function zufallsfarbe() {
+                    var x = Math.floor(Math.random() * 256);
+                    var y = Math.floor(Math.random() * 256);
+                    var z = Math.floor(Math.random() * 256);
+                    var farbe = "rgb(" + x + "," + y + "," + z + ")";
+                    document.getElementById('flaeche').style.backgroundColor = farbe;
+                }
+                zufallsfarbe();
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+<!-- Hier kommt das html rein -->
+<div id="flaeche"></div>
+<button>Farbe ändern</button>
+</body>
+</html>
